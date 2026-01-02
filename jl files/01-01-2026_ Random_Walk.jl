@@ -9,7 +9,6 @@ using CSV, DataFrames, Dates, Random, Statistics, Plots
 btc_daily_candles = CSV.read("btc_candlestick_data.csv", DataFrame) 
 
 btc_daily_candles.Date = Date.(string.(btc_daily_candles.Date), dateformat"yyyy-mm-dd")
-dates = btc_daily_candles.Date[window:length(btc_daily_candles.Date)]
 
 btc_daily_candles.logret = [missing; diff(log.(btc_daily_candles.Close))] # Computing log return on the Close
 returns = skipmissing(btc_daily_candles.logret)
