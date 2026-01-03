@@ -1,6 +1,6 @@
 using CSV, DataFrames, Dates, Random, Statistics, Plots
 
-BTC_price = CSV.read("btc_candlestick_data", DataFrame)
+BTC_price = CSV.read("btc_candlestick_data.csv", DataFrame)
 
 log_prices = log.(BTC_price.Close)
 
